@@ -1,9 +1,9 @@
 name: Stock Monitor
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'  # 5분마다 실행하라는 마법의 주문!
-  workflow_dispatch:       # 내가 원할 때 수동으로 버튼 눌러서 실행하는 기능
+  repository_dispatch:
+    types: [run-stock-bot]
+  workflow_dispatch:
   push:
 jobs:
   build:
